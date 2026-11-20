@@ -1,0 +1,48 @@
+
+# ==========================================
+# KernForge - Git Ignore
+# ==========================================
+
+# CMake / Ninja build directories
+/build/
+/cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+.ninja_deps
+.ninja_log
+
+# C++ / CUDA compiled artifacts
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+*.whl
+
+# Python virtual environments
+.venv/
+venv/
+
+# Test and coverage cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# VS Code local settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
+*~
+.DS_Store

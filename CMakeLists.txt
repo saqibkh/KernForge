@@ -35,12 +35,10 @@ set_target_properties(kernforge PROPERTIES
     CUDA_SEPARABLE_COMPILATION ON
 )
 
-# C++ / CUDA 单元测试
-add_executable(test_rmsnorm
-    tests/test_rmsnorm.cu
-)
+include(CTest)
 
-target_link_libraries(test_rmsnorm
-    PRIVATE
-        kernforge
-)
+if(BUILD_TESTING)
+    add_executable(test_rmsnorm tests/test_rmsnorm.cu)
+    target_link_libraries(test_rmsnorm PRIVATE kernforge)
+    add_test(NAME rmsnorm_fp32 COMMAND test_rmsnorm)
+endif()
